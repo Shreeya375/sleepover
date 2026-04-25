@@ -1,1 +1,122 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: radial-gradient(circle at center, #1a1a2e, #0a0a12);
+  font-family: 'Poppins', sans-serif;
+  color: #e6e6ff;
+  text-align: center;
+}
 
+/* START SCREEN */
+#start-screen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 600px;
+  animation: fadeIn 2s ease;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-shadow: 0 0 10px #8a2be2;
+}
+
+.story {
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.press-space {
+  margin-top: 30px;
+  font-size: 1.2rem;
+  animation: pulse 1.5s infinite;
+  color: #b19cd9;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { opacity: 0.3; }
+}
+
+/* GAME AREA */
+#game {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+#player {
+  width: 40px;
+  height: 40px;
+  background: #b19cd9;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 15px #b19cd9;
+}
+
+.fragment {
+  width: 25px;
+  height: 25px;
+  background: #d6b6ff;
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: 0 0 15px #d6b6ff;
+  animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+.shadow {
+  width: 40px;
+  height: 40px;
+  background: #000;
+  border-radius: 50%;
+  position: absolute;
+  opacity: 0.6;
+  box-shadow: 0 0 20px #000;
+}
+
+/* HUD */
+#score, #timer {
+  position: absolute;
+  top: 10px;
+  font-size: 1.2rem;
+}
+
+#score { left: 10px; }
+#timer { right: 10px; }
+
+/* END SCREEN */
+#end-screen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+button {
+  padding: 10px 20px;
+  background: #8a2be2;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, -60%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
